@@ -8,17 +8,15 @@ namespace VirtualPet
         {
             //Create Virtual Pet
             VirtualPet myCat = new VirtualPet();
+            Menu gameMenu = new Menu();
+
             string mainMenuChoice = "";
             string gameMenuChoice = "";
 
 
             while(mainMenuChoice != "2")
             {
-                Console.WriteLine("Virtual Pet Menu");
-                Console.WriteLine("Welcome to Virtual Pet");
-                Console.WriteLine("1. Play the Game");
-                Console.Write("2. Exit the App");
-                mainMenuChoice = Console.ReadLine();
+                mainMenuChoice = gameMenu.AppMenu();
 
                 while (gameMenuChoice != "10")
                 {
