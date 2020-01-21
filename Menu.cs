@@ -7,9 +7,7 @@ namespace VirtualPet
     public class Menu
     {
         public string MenuName { get; set; }
-
-        readonly VirtualPet myCat = new VirtualPet();
-
+        readonly VirtualPet myPet = new VirtualPet();
         public string AppMenu()
         {
             Console.WriteLine("Virtual Pet Menu");
@@ -18,7 +16,6 @@ namespace VirtualPet
             Console.Write("2. Exit the App");
             string menuChoice = Console.ReadLine();
             return menuChoice;
-      
         }
 
         public string GameMenu()
@@ -26,6 +23,8 @@ namespace VirtualPet
             Console.WriteLine("1. Add a Pet to shelter");
             Console.WriteLine("2. View the Pets Name and Species");
             Console.WriteLine("3. Feed your Pet.");
+            Console.WriteLine("4. Play with your Pet.");
+            Console.WriteLine("5. Take your Pet to the Dr.");
             Console.Write("10. Exit this Game");
             string gameMenuChoice = Console.ReadLine();
             return gameMenuChoice;
@@ -36,22 +35,26 @@ namespace VirtualPet
             switch (menuChoice)
             {
                 case "1":
-                    myCat.IsInShelter = true;
-                    myCat.AddPetToShelter();
-                    myCat.SetPetName();
-                    myCat.SetPetSpecies();
+                    myPet.IsInShelter = true;
+                    myPet.AddPetToShelter();
+                    myPet.SetPetName();
+                    myPet.SetPetSpecies();
                     break;
                 case "2":
-                    myCat.ViewPetInfo();
+                    myPet.ViewPetInfo();
                     break;
                 case "3":
-                    Console.WriteLine(myCat.HungerLevel);
-                    myCat.FeedPet();
+                    myPet.FeedPet();
+                    break;
+                case "4":
+                    myPet.PlayWithPet();
+                    break;
+                case "5":
+                    myPet.TakePetToDoctor();
                     break;
                 default:
                     break;
             }
         }
-
     }
 }

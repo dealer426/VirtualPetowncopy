@@ -7,12 +7,12 @@ namespace VirtualPet
     public class VirtualPet
     {
         // add properties here
-
         public string Name { get; set; }
         public int HungerLevel { get; set; } = 5;
         public string Species { get; set; }
         public bool IsInShelter { get; set; }
-
+        public int BoredomLevel { get; set; } = 5;
+        public int HealthLevel { get; set; } = 5;
 
         // add constructors here
         public VirtualPet()
@@ -34,7 +34,6 @@ namespace VirtualPet
             Console.WriteLine("What is the Pet's name?");
             string UsersPetsName = Console.ReadLine();
             Name = UsersPetsName;
-
         }
 
         public void SetPetSpecies()
@@ -44,18 +43,15 @@ namespace VirtualPet
             Species = UserPetsSpecies;
         }
 
-
         public void ViewPetInfo()
         {
             Console.WriteLine($"My Pets name is {Name}. Its Species is {Species}.");
-
         }
 
         public void AddPetToShelter()
         {
             IsInShelter = true;
             Console.WriteLine((IsInShelter) ? "Your Pet is in the shelter." : "Something Went Wrong!");
-
         }
 
         public void RemovePetFromShelter()
@@ -66,6 +62,16 @@ namespace VirtualPet
         public void FeedPet()
         {
             Console.WriteLine($"Current Hunger level decreases by 1 {--HungerLevel}"); 
+        }
+
+        public void PlayWithPet()
+        {
+            Console.WriteLine($"Current Hunger{++HungerLevel} Boredom {--BoredomLevel} Health Level {++HealthLevel}");
+        }
+
+        public void TakePetToDoctor()
+        {
+            Console.WriteLine($"Health Level {++HealthLevel}");
         }
 
     }

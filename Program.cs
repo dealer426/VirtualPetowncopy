@@ -10,22 +10,16 @@ namespace VirtualPet
             string mainMenuChoice = "";
             string gameMenuChoice = "";
 
-
             while(mainMenuChoice != "2")
-            {
+            { 
                 mainMenuChoice = myMenu.AppMenu();
-
+                
                 while (gameMenuChoice != "10")
                 {
                     gameMenuChoice = myMenu.GameMenu();
-
                     myMenu.ExecuteMenuChoice(gameMenuChoice);
-
                 }
-
             }
-           
-
         }
     }
 }
