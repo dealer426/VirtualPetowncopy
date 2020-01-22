@@ -35,7 +35,6 @@ namespace VirtualPet
             switch (menuChoice)
             {
                 case "1":
-                    myPet.IsInShelter = true;
                     myPet.AddPetToShelter();
                     myPet.SetPetName();
                     myPet.SetPetSpecies();

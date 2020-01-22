@@ -20,6 +20,11 @@ namespace VirtualPet
         
         }
 
+        public VirtualPet(string name, string species)
+        {
+            Name = name;
+            Species = species;
+        }
         public VirtualPet(string name, int hungerLevel, string species, bool isInShelter)
         {
             Name = name; 
